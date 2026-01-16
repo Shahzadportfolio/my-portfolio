@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzad Ahmad | Web Architect</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="loader-logo">S. AHMAD</h1>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <div id="scroll-progress"></div>
+    <div class="cursor-glow" id="glow"></div>
+
+    <div class="wa-float">
+        <div class="wa-popup" id="waPopup">Ready to scale your institution's tech? 👋</div>
+        <a href="https://wa.me/923409070898?text=Hi%20Shahzad,%20I'm%20interested%20in%20your%20services!" target="_blank" class="wa-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="wa-badge"></span>
+        </a>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800/50 py-5 px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent italic underline decoration-purple-500 underline-offset-4">S. AHMAD</div>
+            <div class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#projects" class="hover:text-white transition">Portfolio</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center relative px-8 pt-20">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span> Expert Web Architect
+                </div>
+                <h1 class="text-7xl md:text-8xl font-bold mb-6 leading-none tracking-tighter uppercase italic">
+                    Shahzad <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Ahmad</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-10 max-w-lg leading-relaxed font-light">
+                    Specialized in high-end PHP architecture and educational management systems for organizations like <b>Fiqh Academy</b> and <b>Al Manhal School</b>.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-white text-black px-10 py-4 rounded-2xl font-bold hover:bg-purple-600 hover:text-white transition-all shadow-xl shadow-purple-500/10 text-center">Start Project</a>
+                    <a href="#projects" class="border border-gray-700 px-10 py-4 rounded-2xl font-bold hover:border-cyan-400 transition-all text-center">My Work</a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center" data-aos="zoom-in">
+                <div class="absolute -inset-10 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="relative float-img rounded-[4rem] overflow-hidden border-2 border-gray-800 bg-gray-900 aspect-[3/4] w-full max-w-md shadow-2xl group">
+                    <img src="shahzad.png" alt="Shahzad Ahmad" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-8 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center tracking-tighter uppercase italic">Visual <span class="text-purple-500">Gallery</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="gallery-item h-[450px]" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426" alt="Project">
+                    <div class="gallery-overlay">
+                        <h4 class="text-2xl font-bold text-white mb-2">Fiqh Academy Portal</h4>
+                        <p class="text-sm text-gray-300 mb-6">Educational management & LMS architecture.</p>
+                        <a href="http://web.fiqhacademy.com.pk" target="_blank" class="bg-cyan-500 text-black text-center py-2 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white transition">Visit Site</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-[450px]" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=2340" alt="Project">
+                    <div class="gallery-overlay">
+                        <h4 class="text-2xl font-bold text-white mb-2">Maktab PK</h4>
+                        <p class="text-sm text-gray-300 mb-6">E-commerce bookstore for religious texts.</p>
+                        <a href="https://www.maktabpk.com/" target="_blank" class="bg-cyan-500 text-black text-center py-2 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white transition">Visit Site</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-[450px]" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2340" alt="Project">
+                    <div class="gallery-overlay">
+                        <h4 class="text-2xl font-bold text-white mb-2">Fatih Foundation</h4>
+                        <p class="text-sm text-gray-300 mb-6">Social welfare platform and coordination hub.</p>
+                        <a href="http://fatihfoundation.com" target="_blank" class="bg-cyan-500 text-black text-center py-2 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white transition">Visit Site</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-8 relative z-10 bg-slate-950/40">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center tracking-tighter uppercase italic underline decoration-cyan-400 decoration-2 underline-offset-8">What I Do</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-[3rem] neon-border" data-aos="fade-right">
+                    <i class="fas fa-code text-3xl text-purple-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">PHP & SQL Systems</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Developing secure backend architectures and complex database management for school systems.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[3rem] neon-border" data-aos="fade-up">
+                    <i class="fab fa-wordpress-simple text-3xl text-cyan-400 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">WordPress LMS</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Customizing Elementor and LearnPress for educational portals and digital academies.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[3rem] neon-border" data-aos="fade-left">
+                    <i class="fas fa-layer-group text-3xl text-white mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">UI/UX Strategy</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Focusing on clean design systems that simplify technology for end-users and students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 relative z-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-8 italic text-purple-400 uppercase tracking-tighter">Core Capabilities</h2>
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex justify-between mb-2 text-xs font-bold uppercase tracking-widest text-gray-400"><span>PHP / MySQL / SQL</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" id="php-bar"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-xs font-bold uppercase tracking-widest text-gray-400"><span>WordPress & Elementor Expert</span><span>95%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" id="wp-bar"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+                <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-purple-500 text-center">
+                    <h3 class="text-5xl font-bold mb-2 tracking-tighter italic" id="count1">0</h3>
+                    <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Deployments</p>
+                </div>
+                <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-cyan-500 text-center">
+                    <h3 class="text-5xl font-bold mb-2 tracking-tighter italic" id="count2">0</h3>
+                    <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Years Expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-32 px-8 bg-gray-950/30">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-20 text-center tracking-tighter uppercase underline decoration-purple-600 underline-offset-8">Institutional Journey</h2>
+            <div class="relative space-y-16">
+                <div class="timeline-line"></div>
+                <div class="relative pl-12" data-aos="fade-up">
+                    <div class="absolute left-[-4px] top-2 w-4 h-4 rounded-full bg-purple-500 shadow-[0_0_15px_#a855f7]"></div>
+                    <h3 class="text-2xl font-bold text-white mb-1">Fiqh Academy Lead Developer</h3>
+                    <p class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-4 italic">web.fiqhacademy.com.pk</p>
+                    <p class="text-gray-400 leading-relaxed font-light">Engineered custom event systems for Quran Hifz programs and developed full-scale website architecture, including MaktabPK e-commerce features.</p>
+                </div>
+                <div class="relative pl-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute left-[-4px] top-2 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_15px_#06b6d4]"></div>
+                    <h3 class="text-2xl font-bold text-white mb-1">Al Manhal School & Fatih Foundation</h3>
+                    <p class="text-cyan-400 font-bold text-xs uppercase tracking-widest mb-4 italic">Platform Architecture</p>
+                    <p class="text-gray-400 leading-relaxed font-light">Customized digital layouts and integrated academic management tools for school environments and welfare organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-24 border-t border-gray-900 bg-gray-950 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.05)_0%,transparent_70%)]"></div>
+        <div class="max-w-2xl mx-auto px-8 relative z-10">
+            <h2 class="text-5xl font-bold mb-10 tracking-tighter uppercase italic underline decoration-cyan-400 decoration-2 underline-offset-8">Ready to <span class="text-purple-500">Collaborate</span>?</h2>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="https://wa.me/923409070898?text=Hi%20Shahzad,%20I'm%20interested%20in%20your%20services!" class="flex items-center justify-center gap-3 bg-white text-black px-12 py-5 rounded-full font-bold hover:scale-105 transition shadow-2xl">
+                    <i class="fab fa-whatsapp text-2xl"></i> WhatsApp Me
+                </a>
+                <a href="mailto:contact@shahzad.com" class="text-gray-400 hover:text-white transition-all font-bold uppercase text-xs tracking-[0.5em]">Direct Email Inbox</a>
+            </div>
+            <p class="mt-20 text-gray-700 text-[10px] font-black uppercase tracking-[0.5em]">© 2026 Shahzad Ahmad Portfolio • Built for Excellence</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -11,112 +11,56 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Preloader Styles */
+/* Preloader */
 #loader {
-    position: fixed;
-    inset: 0;
-    background: #030712;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed; inset: 0; background: #030712; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
     transition: opacity 0.8s ease, visibility 0.8s;
 }
-
-.loader-content { text-align: center; }
-
-.loader-logo {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 0.5rem;
-    color: white;
-    margin-bottom: 1.5rem;
-    animation: pulse-text 2s infinite;
-}
-
-.loader-spinner {
-    width: 40px; height: 40px;
-    border: 3px solid rgba(168, 85, 247, 0.1);
-    border-top-color: var(--primary);
-    border-radius: 50%;
-    margin: 0 auto;
-    animation: spin 1s linear infinite;
-}
-
+.loader-logo { font-size: 2rem; font-weight: 800; letter-spacing: 0.5rem; color: white; animation: pulse-text 2s infinite; }
+.loader-spinner { width: 40px; height: 40px; border: 3px solid rgba(168, 85, 247, 0.1); border-top-color: var(--primary); border-radius: 50%; margin: 1.5rem auto 0; animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes pulse-text {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.95); }
+@keyframes pulse-text { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.95); } }
+.loader-hidden { opacity: 0; visibility: hidden; }
+
+/* Custom Scrollbar & Glow */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(to right, var(--primary), var(--secondary)); width: 0%; z-index: 100; }
+.cursor-glow { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); transition: 0.1s cubic-bezier(0.23, 1, 0.32, 1); }
+
+/* Gallery Infinite Scroll Logic */
+.gallery-container { overflow: hidden; width: 100%; position: relative; padding: 20px 0; }
+.gallery-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: infinite-scroll 35s linear infinite;
+}
+.gallery-track:hover { animation-play-state: paused; }
+@keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
 }
 
-.loader-hidden {
-    opacity: 0;
-    visibility: hidden;
-}
+.gallery-item { position: relative; overflow: hidden; border-radius: 2.5rem; background: #000; width: 420px; flex-shrink: 0; height: 480px; border: 1px solid rgba(255,255,255,0.05); }
+.gallery-item img { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); width: 100%; height: 100%; object-fit: cover; }
+.gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 0.4) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2.5rem; opacity: 0; transform: translateY(30px); transition: all 0.5s ease; }
+.gallery-item:hover .gallery-overlay { opacity: 1; transform: translateY(0); }
+.gallery-item:hover img { transform: scale(1.1); opacity: 0.5; }
 
 /* UI Elements */
-#scroll-progress {
-    position: fixed; top: 0; left: 0; height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    width: 0%; z-index: 100;
-}
-
-.cursor-glow {
-    position: fixed; width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
-    border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); transition: 0.1s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.glass-card {
-    background: rgba(17, 24, 39, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
+.glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+.neon-border:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
 .float-img { animation: floating 6s ease-in-out infinite; }
 @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-
 .skill-bar { height: 8px; border-radius: 10px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
 .skill-progress { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 0%; transition: 2s ease-in-out; }
-
 .timeline-line { position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, var(--primary), var(--secondary), transparent); }
 
-/* WhatsApp Styling */
+/* WhatsApp */
 .wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; align-items: center; }
-.wa-btn {
-    width: 60px; height: 60px; background: #25d366;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 30px; color: white; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-    transition: 0.3s;
-}
+.wa-btn { width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: 0.3s; }
 .wa-btn:hover { transform: scale(1.15); background: #20ba5a; }
-.wa-badge {
-    position: absolute; top: 2px; right: 2px; width: 14px; height: 14px;
-    background: #ff3b30; border-radius: 50%; border: 2px solid white;
-    animation: wa-pulse 1.5s infinite;
-}
-.wa-popup {
-    background: white; color: #333; padding: 12px 20px; border-radius: 18px 18px 0 18px;
-    margin-right: 15px; font-size: 14px; font-weight: 600;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); opacity: 0; transform: translateY(10px);
-    transition: 0.5s;
-}
+.wa-badge { position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: #ff3b30; border-radius: 50%; border: 2px solid white; animation: wa-pulse 1.5s infinite; }
+.wa-popup { background: white; color: #333; padding: 12px 20px; border-radius: 18px 18px 0 18px; margin-right: 15px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.3); opacity: 0; transform: translateY(10px); transition: 0.5s; pointer-events: none; }
 .wa-popup.show { opacity: 1; transform: translateY(0); }
-@keyframes wa-pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
-    70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
-}
-
-/* Gallery System */
-.gallery-item { position: relative; overflow: hidden; border-radius: 2rem; background: #000; }
-.gallery-item img { transition: transform 0.5s ease; width: 100%; height: 100%; object-fit: cover; }
-.gallery-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 0.4) 60%, transparent 100%);
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 2rem; opacity: 0; transform: translateY(20px); 
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.gallery-item:hover .gallery-overlay { opacity: 1; transform: translateY(0); }
-.gallery-item:hover img { transform: scale(1.1); opacity: 0.6; }
+@keyframes wa-pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); } 70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); } }

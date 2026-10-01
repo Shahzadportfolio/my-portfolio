@@ -204,7 +204,7 @@ footer{padding:3rem 6vw;text-align:center;color:#475569;font-size:.8rem;border-t
   <div class="proj wrap">
     <div class="proj-grid">
       <div style="position:relative"><span class="proj-num">01</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: fiqh-academy.webp]</span><img data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffiqhacademy.com.pk%2F%3Fw%3D800%26h%3D600" alt="Fiqh Academy website screenshot" loading="lazy"></div>
+        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: fiqh-academy.webp]</span><img data-file="images/fiqh-academy.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffiqhacademy.com.pk%2F%3Fw%3D800%26h%3D600" alt="Fiqh Academy website screenshot" loading="lazy"></div>
       </div>
       <div class="proj-info rv"><p class="cat">Educational Organization</p><h3>Fiqh Academy</h3>
         <p>Website for an educational organization presenting courses, events, publications and campus information. Redesigned the homepage with a unified design system and manage hosting, domain, DNS and SSL.</p>
@@ -219,7 +219,7 @@ footer{padding:3rem 6vw;text-align:center;color:#475569;font-size:.8rem;border-t
         <p><span class="tag">WordPress</span><span class="tag">Responsive Design</span></p>
         <a href="https://maktabpk.com/" target="_blank" rel="noopener" class="btn line" data-hov>Visit Site</a></div>
       <div style="direction:ltr;position:relative"><span class="proj-num">02</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: maktab.webp]</span><img data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmaktabpk.com%2F%3Fw%3D800%26h%3D600" alt="Maktab website screenshot" loading="lazy"></div>
+        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: maktab.webp]</span><img data-file="images/maktab.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmaktabpk.com%2F%3Fw%3D800%26h%3D600" alt="Maktab website screenshot" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -227,7 +227,7 @@ footer{padding:3rem 6vw;text-align:center;color:#475569;font-size:.8rem;border-t
   <div class="proj wrap">
     <div class="proj-grid">
       <div style="position:relative"><span class="proj-num">03</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: al-rab-foundation.webp]</span><img data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Falrabfoundation.com%2F%3Fw%3D800%26h%3D600" alt="Al-Rab Foundation website screenshot" loading="lazy"></div>
+        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: al-rab-foundation.webp]</span><img data-file="images/al-rab-foundation.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Falrabfoundation.com%2F%3Fw%3D800%26h%3D600" alt="Al-Rab Foundation website screenshot" loading="lazy"></div>
       </div>
       <div class="proj-info rv"><p class="cat">Nonprofit / Foundation</p><h3>Al-Rab Foundation</h3>
         <p>Website presenting the organization, its programs, and donation and contact sections, with clear navigation.</p>
@@ -242,7 +242,7 @@ footer{padding:3rem 6vw;text-align:center;color:#475569;font-size:.8rem;border-t
         <p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></p>
         <a href="https://amias.edu.pk/" target="_blank" rel="noopener" class="btn line" data-hov>Visit Site</a></div>
       <div style="direction:ltr;position:relative"><span class="proj-num">04</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: amias.webp]</span><img data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Famias.edu.pk%2F%3Fw%3D800%26h%3D600" alt="AMIAS website screenshot" loading="lazy"></div>
+        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: amias.webp]</span><img data-file="images/amias.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Famias.edu.pk%2F%3Fw%3D800%26h%3D600" alt="AMIAS website screenshot" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -455,9 +455,13 @@ document.querySelectorAll('[data-count]').forEach(el=>{
 });
 
 /* project screenshot fallback: file -> live preview -> label stays */
+/* Project screenshots: try your own file, then two live-preview services, then the label placeholder */
 document.querySelectorAll('.proj-shot img').forEach(img=>{
-  img.src=img.dataset.live;
-  img.addEventListener('error',()=>img.remove());
+  const chain=[img.dataset.file,img.dataset.live].filter(Boolean);
+  let i=0;
+  function next(){ if(i>=chain.length){ img.remove(); return; } img.src=chain[i++]; }
+  img.addEventListener('error',next);
+  next();
 });
 
 /* custom cursor (desktop, fine pointer only) */

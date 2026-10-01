@@ -91,18 +91,14 @@ nav a.on{color:#fff;background:rgba(255,255,255,.08)}
 .svc p{color:#94a3b8;font-size:.87rem;line-height:1.6;margin:0}
 .svc .n{font-size:.7rem;color:#475569;font-weight:800;margin-bottom:.8rem}
 /* projects */
-.proj{min-height:78vh;display:flex;align-items:center;padding:6vh 0}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
-.proj-num{font-size:clamp(3.5rem,9vw,8rem);font-weight:700;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);line-height:1;position:absolute;top:-2rem;left:-1rem;z-index:0}
-.proj-shot{position:relative;aspect-ratio:4/3;border-radius:1.3rem;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,#1e1b4b,#083344)}
-.proj-shot img{width:100%;height:100%;object-fit:cover;object-position:top;transform:scale(1.06);will-change:transform}
-.proj-shot span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;font-size:.7rem;color:#94a3b8}
+.proj{min-height:60vh;display:flex;align-items:center;padding:6vh 0}
+.proj-num{font-size:clamp(3.5rem,9vw,8rem);font-weight:700;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);line-height:1;position:absolute;top:-2.2rem;left:-.3rem;z-index:0}
 .proj-info{position:relative;z-index:1}
 .proj-info .cat{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:.8rem}
 .proj-info h3{font-size:clamp(1.6rem,3vw,2.4rem);margin:0 0 1rem}
 .proj-info p{color:#94a3b8;line-height:1.7;margin-bottom:1.3rem;max-width:32rem}
 .tag{display:inline-block;font-size:.72rem;padding:.3rem .8rem;border:1px solid rgba(255,255,255,.15);border-radius:100px;margin:0 .4rem .4rem 0;color:#cbd5e1}
-@media(max-width:760px){.proj-grid{grid-template-columns:1fr}.proj-num{display:none}}
+@media(max-width:760px){.proj-num{font-size:2.8rem;top:-1.6rem}}
 /* tech */
 .tech-field{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
 .tech-chip{padding:.7rem 1.3rem;border-radius:100px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-size:.85rem;font-weight:600;color:#cbd5e1;will-change:transform;transition:border-color .3s,color .3s}
@@ -201,51 +197,37 @@ footer{padding:3rem 6vw;text-align:center;color:#475569;font-size:.8rem;border-t
 <section id="projects">
   <div class="wrap"><p class="eyebrow rv">Selected Work</p></div>
 
-  <div class="proj wrap">
-    <div class="proj-grid">
-      <div style="position:relative"><span class="proj-num">01</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: fiqh-academy.webp]</span><img data-file="images/fiqh-academy.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffiqhacademy.com.pk%2F%3Fw%3D800%26h%3D600" alt="Fiqh Academy website screenshot" loading="lazy"></div>
-      </div>
-      <div class="proj-info rv"><p class="cat">Educational Organization</p><h3>Fiqh Academy</h3>
-        <p>Website for an educational organization presenting courses, events, publications and campus information. Redesigned the homepage with a unified design system and manage hosting, domain, DNS and SSL.</p>
-        <p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">cPanel / DNS / SSL</span></p>
-        <a href="https://fiqhacademy.com.pk/" target="_blank" rel="noopener" class="btn line" data-hov>Visit Site</a></div>
-    </div>
-  </div>
+  <div class="proj wrap"><div class="proj-info rv" style="position:relative;max-width:40rem">
+    <span class="proj-num">01</span>
+    <p class="cat">Educational Organization</p><h3>Fiqh Academy</h3>
+    <p>Website for an educational organization presenting courses, events, publications and campus information. Redesigned the homepage with a unified design system and manage hosting, domain, DNS and SSL.</p>
+    <p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">cPanel / DNS / SSL</span></p>
+    <a href="https://fiqhacademy.com.pk/" target="_blank" rel="noopener" class="btn line" data-hov>fiqhacademy.com.pk ↗</a>
+  </div></div>
 
-  <div class="proj wrap">
-    <div class="proj-grid" style="direction:rtl"><div style="direction:ltr"><p class="cat">Education / Islamic Learning</p><h3>Maktab</h3>
-        <p>Educational website presenting Quranic learning programs, with admissions call-to-action and clear navigation.</p>
-        <p><span class="tag">WordPress</span><span class="tag">Responsive Design</span></p>
-        <a href="https://maktabpk.com/" target="_blank" rel="noopener" class="btn line" data-hov>Visit Site</a></div>
-      <div style="direction:ltr;position:relative"><span class="proj-num">02</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: maktab.webp]</span><img data-file="images/maktab.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmaktabpk.com%2F%3Fw%3D800%26h%3D600" alt="Maktab website screenshot" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
+  <div class="proj wrap"><div class="proj-info rv" style="position:relative;max-width:40rem">
+    <span class="proj-num">02</span>
+    <p class="cat">Education / Islamic Learning</p><h3>Maktab</h3>
+    <p>Educational website presenting Quranic learning programs, with admissions call-to-action and clear navigation.</p>
+    <p><span class="tag">WordPress</span><span class="tag">Responsive Design</span></p>
+    <a href="https://maktabpk.com/" target="_blank" rel="noopener" class="btn line" data-hov>maktabpk.com ↗</a>
+  </div></div>
 
-  <div class="proj wrap">
-    <div class="proj-grid">
-      <div style="position:relative"><span class="proj-num">03</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: al-rab-foundation.webp]</span><img data-file="images/al-rab-foundation.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Falrabfoundation.com%2F%3Fw%3D800%26h%3D600" alt="Al-Rab Foundation website screenshot" loading="lazy"></div>
-      </div>
-      <div class="proj-info rv"><p class="cat">Nonprofit / Foundation</p><h3>Al-Rab Foundation</h3>
-        <p>Website presenting the organization, its programs, and donation and contact sections, with clear navigation.</p>
-        <p><span class="tag">Website Development</span><span class="tag">Responsive Design</span></p>
-        <a href="https://alrabfoundation.com/" target="_blank" rel="noopener" class="btn line" data-hov>Visit Site</a></div>
-    </div>
-  </div>
+  <div class="proj wrap"><div class="proj-info rv" style="position:relative;max-width:40rem">
+    <span class="proj-num">03</span>
+    <p class="cat">Nonprofit / Foundation</p><h3>Al-Rab Foundation</h3>
+    <p>Website presenting the organization, its programs, and donation and contact sections, with clear navigation.</p>
+    <p><span class="tag">Website Development</span><span class="tag">Responsive Design</span></p>
+    <a href="https://alrabfoundation.com/" target="_blank" rel="noopener" class="btn line" data-hov>alrabfoundation.com ↗</a>
+  </div></div>
 
-  <div class="proj wrap">
-    <div class="proj-grid" style="direction:rtl"><div style="direction:ltr"><p class="cat">Higher Education</p><h3>AMIAS</h3>
-        <p>Al Manhal Institute for Advanced Studies: program, campus and admissions pages, including the BS English and BS Islamiyat pages and admission form.</p>
-        <p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></p>
-        <a href="https://amias.edu.pk/" target="_blank" rel="noopener" class="btn line" data-hov>Visit Site</a></div>
-      <div style="direction:ltr;position:relative"><span class="proj-num">04</span>
-        <div class="proj-shot rv" data-hov="VIEW"><span>[Add screenshot: amias.webp]</span><img data-file="images/amias.webp" data-live="https://s0.wp.com/mshots/v1/https%3A%2F%2Famias.edu.pk%2F%3Fw%3D800%26h%3D600" alt="AMIAS website screenshot" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
+  <div class="proj wrap"><div class="proj-info rv" style="position:relative;max-width:40rem">
+    <span class="proj-num">04</span>
+    <p class="cat">Higher Education</p><h3>AMIAS</h3>
+    <p>Al Manhal Institute for Advanced Studies: program, campus and admissions pages, including the BS English and BS Islamiyat pages and admission form.</p>
+    <p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></p>
+    <a href="https://amias.edu.pk/" target="_blank" rel="noopener" class="btn line" data-hov>amias.edu.pk ↗</a>
+  </div></div>
 </section>
 
 <section>
@@ -430,12 +412,6 @@ if(fine && !reduce) document.querySelectorAll('.skill-card,[data-tilt]').forEach
 /* timeline draw */
 gsap.to('#tlFill',{scaleY:1,ease:'none',scrollTrigger:{trigger:'.tl',start:'top 70%',end:'bottom 70%',scrub:true}});
 
-/* project image scale-parallax as each panel scrolls through */
-gsap.utils.toArray('.proj').forEach(p=>{
-  const img=p.querySelector('img');
-  gsap.fromTo(img,{scale:1.18},{scale:1,ease:'none',scrollTrigger:{trigger:p,start:'top bottom',end:'bottom top',scrub:true}});
-});
-
 /* tech chips gentle mouse parallax */
 if(fine && !reduce) document.querySelectorAll('.tech-chip').forEach((c,i)=>{
   const f=.02+(i%4)*.01;
@@ -452,16 +428,6 @@ document.querySelectorAll('[data-count]').forEach(el=>{
     if(txt){ el.textContent=txt+suf; return; }
     gsap.fromTo({v:0},{v:target},{v:target,duration:1.4,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(this.targets()[0].v)+suf;}});
   }});
-});
-
-/* project screenshot fallback: file -> live preview -> label stays */
-/* Project screenshots: try your own file, then two live-preview services, then the label placeholder */
-document.querySelectorAll('.proj-shot img').forEach(img=>{
-  const chain=[img.dataset.file,img.dataset.live].filter(Boolean);
-  let i=0;
-  function next(){ if(i>=chain.length){ img.remove(); return; } img.src=chain[i++]; }
-  img.addEventListener('error',next);
-  next();
 });
 
 /* custom cursor (desktop, fine pointer only) */
